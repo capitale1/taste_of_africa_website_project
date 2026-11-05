@@ -1,64 +1,37 @@
-/* =====================================================
-   TASTE OF AFRICA - MAIN STYLESHEET
-   -----------------------------------------------------
-   1.  Color palette & variables
-   2.  Reset & base typography
-   3.  Header & navigation
-   4.  Shared utilities (mark, buttons, focus, hidden)
-   5.  Shared layout (page intro, video, map, grids)
-   6.  Home page (hero, featured dishes, regions, trends)
-   7.  Recipe cards, filter & favorites
-   8.  Single recipe pages
-   9.  Culinary regions pages
-   10. About page
-   11. Contact page & form
-   12. Footer & newsletter
-   13. Animations
-   14. Responsive adjustments
-   ===================================================== */
+/* Taste of Africa - main stylesheet */
 
-
-/* =====================================================
-   1. COLOR PALETTE & VARIABLES
-   Inspired by African spices and landscapes:
-   turmeric, chili pepper, red earth, roasted coffee, millet
-   ===================================================== */
+/* Variables */
 :root {
-  --turmeric: #e3a018;     /* warm yellow - highlights, buttons */
-  --chili: #a8321e;        /* deep red - headings, accents */
-  --red-earth: #8c4a24;    /* earthy brown - header & footer */
-  --coffee: #3a2418;       /* dark brown - main text */
-  --millet: #f7ecd6;       /* light grain - page background */
-  --surface: #fffaf1;      /* cards and forms */
-  --muted: #6e5544;        /* secondary text */
-  --border: #e3d2b5;       /* soft borders */
-  --on-dark: #fff6e6;      /* text on brown header/footer */
-  --success: #3d7a3a;      /* confirmation messages */
-
+  --turmeric: #e3a018;
+  --chili: #a8321e;
+  --red-earth: #8c4a24;
+  --coffee: #3a2418;
+  --millet: #f7ecd6;
+  --surface: #fffaf1;
+  --muted: #6e5544;
+  --border: #e3d2b5;
+  --on-dark: #fff6e6;
+  --success: #3d7a3a;
   --shadow: 0 4px 14px rgba(58, 36, 24, 0.15);
   --shadow-hover: 0 10px 24px rgba(58, 36, 24, 0.25);
   --radius: 0.75rem;
   --space: 1.5rem;
 }
 
-/* Dark mode: script.js adds data-theme="dark" to <html> */
 [data-theme="dark"] {
   --millet: #1f1612;
   --surface: #2c201a;
   --coffee: #f4e6d2;
   --muted: #c9b29c;
   --border: #4a382c;
-  --chili: #e2674c;        /* lighter red so headings stay readable */
+  --chili: #e2674c;
   --red-earth: #4a2a18;
   --success: #7cc277;
   --shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
   --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.6);
 }
 
-
-/* =====================================================
-   2. RESET & BASE TYPOGRAPHY
-   ===================================================== */
+/* Base */
 *,
 *::before,
 *::after {
@@ -71,12 +44,12 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;        /* body fills at least the whole screen */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: 'Nunito', Arial, sans-serif;
-  font-size: 1rem;          /* base size: 16px */
-  line-height: 1.6;         /* comfortable reading */
+  font-size: 1rem;
+  line-height: 1.6;
   background-color: var(--millet);
   color: var(--coffee);
   transition: background-color 0.3s, color 0.3s;
@@ -86,7 +59,7 @@ h1,
 h2,
 h3 {
   font-family: 'Abril Fatface', Georgia, serif;
-  font-weight: 400;         /* Abril Fatface is already heavy */
+  font-weight: 400;
   line-height: 1.2;
   color: var(--chili);
   margin: 0 0 0.75rem;
@@ -98,7 +71,7 @@ h3 { font-size: 1.35rem; }
 
 p {
   margin: 0 0 1rem;
-  max-width: 70ch;          /* keeps lines short enough to read easily */
+  max-width: 70ch;
 }
 
 a {
@@ -106,14 +79,13 @@ a {
 }
 
 img {
-  max-width: 100%;          /* images never overflow their container */
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Main content area: centered, never wider than 1100px */
 main {
-  flex: 1;                  /* pushes the footer to the bottom */
+  flex: 1;
   width: min(90%, 1100px);
   margin: 0 auto;
   padding: 2rem 0;
@@ -123,10 +95,7 @@ section {
   margin-bottom: 3.5rem;
 }
 
-
-/* =====================================================
-   3. HEADER & NAVIGATION
-   ===================================================== */
+/* Header & navigation */
 .site-header {
   display: flex;
   flex-wrap: wrap;
@@ -135,7 +104,7 @@ section {
   gap: 1rem;
   padding: 1rem 5%;
   background-color: var(--red-earth);
-  position: sticky;         /* nav stays visible while scrolling */
+  position: sticky;
   top: 0;
   z-index: 100;
 }
@@ -165,20 +134,13 @@ section {
   transition: color 0.2s, border-color 0.2s;
 }
 
-/* Hover effect: color change + underline */
 .nav-links a:hover,
-.nav-links a:focus-visible {
-  color: var(--turmeric);
-  border-bottom-color: var(--turmeric);
-}
-
-/* Current page: add class="active" to the link in each page's nav */
+.nav-links a:focus-visible,
 .nav-links a.active {
   color: var(--turmeric);
   border-bottom-color: var(--turmeric);
 }
 
-/* Dark mode toggle button */
 .theme-toggle {
   width: 2.6rem;
   height: 2.6rem;
@@ -195,12 +157,7 @@ section {
   transform: rotate(20deg);
 }
 
-
-/* =====================================================
-   4. SHARED UTILITIES
-   ===================================================== */
-
-/* Custom highlight for spices and key ingredients */
+/* Utilities */
 mark {
   background-color: var(--turmeric);
   color: #3a2418;
@@ -209,12 +166,10 @@ mark {
   font-weight: 600;
 }
 
-/* Used by the recipe filter and form in script.js */
 .hidden {
   display: none !important;
 }
 
-/* Reusable button style */
 .btn {
   display: inline-block;
   padding: 0.65rem 1.4rem;
@@ -234,25 +189,18 @@ mark {
   transform: translateY(-2px);
 }
 
-/* Clear outline for keyboard users (accessibility) */
 :focus-visible {
   outline: 3px solid var(--turmeric);
   outline-offset: 3px;
 }
 
-
-/* =====================================================
-   5. SHARED LAYOUT
-   ===================================================== */
-
-/* Short intro under the h1 on each page */
+/* Shared layout */
 .page-intro {
   font-size: 1.15rem;
   color: var(--muted);
   margin-bottom: 2rem;
 }
 
-/* Responsive YouTube embeds: <div class="video-wrapper"><iframe>...</iframe></div> */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -271,7 +219,6 @@ mark {
   border: 0;
 }
 
-/* Google Maps embeds: <div class="map-wrapper"><iframe>...</iframe></div> */
 .map-wrapper {
   width: 100%;
   height: 350px;
@@ -287,14 +234,12 @@ mark {
   border: 0;
 }
 
-/* Responsive card grid used on several pages */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space);
 }
 
-/* "Back to recipes" style links */
 .back-link {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -306,29 +251,51 @@ mark {
   text-decoration: underline;
 }
 
-
-/* =====================================================
-   6. HOME PAGE
-   ===================================================== */
-
-/* Hero: full-width background image with dark overlay */
+/* Home: hero slideshow */
 .hero {
   position: relative;
-  min-height: 70vh;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  max-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4rem 5%;
   color: #fff;
-  background-image:
-    linear-gradient(rgba(30, 15, 8, 0.55), rgba(30, 15, 8, 0.7)),
-    url('images/hero.jpg');
+  background-color: var(--coffee);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.slide-1 { background-image: url('images/hero.jpg'); }
+.slide-2 { background-image: url('images/jollof.jpg'); }
+.slide-3 { background-image: url('images/tagine.jpg'); }
+.slide-4 { background-image: url('images/injera.jpg'); }
+.slide-5 { background-image: url('images/isombe.png'); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(30, 15, 8, 0.55), rgba(30, 15, 8, 0.7));
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 750px;
 }
 
@@ -343,7 +310,7 @@ mark {
   margin: 0 auto 1.5rem;
 }
 
-/* Video section under the hero */
+/* Home: content sections */
 .intro-video {
   max-width: 850px;
   margin-left: auto;
@@ -351,7 +318,6 @@ mark {
   text-align: center;
 }
 
-/* Featured dish cards: <figure class="dish-card"> */
 .dish-card {
   margin: 0;
   background-color: var(--surface);
@@ -371,7 +337,7 @@ mark {
 .dish-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;        /* crops images so all cards match */
+  object-fit: cover;
 }
 
 .dish-card figcaption {
@@ -386,7 +352,6 @@ mark {
   flex: 1;
 }
 
-/* Explore by region links */
 .region-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -415,7 +380,6 @@ mark {
   transform: translateY(-4px);
 }
 
-/* Latest food trends: <article class="trend-card"> */
 .trends-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -437,12 +401,7 @@ mark {
   margin-bottom: 0.5rem;
 }
 
-
-/* =====================================================
-   7. RECIPE CARDS, FILTER & FAVORITES
-   ===================================================== */
-
-/* Filter buttons */
+/* Recipe cards, filter & favorites */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -468,7 +427,6 @@ mark {
   color: #fff;
 }
 
-/* Recipe cards: <article class="recipe-card" data-region="west-africa" data-id="jollof"> */
 .recipe-card {
   position: relative;
   background-color: var(--surface);
@@ -524,7 +482,6 @@ mark {
   flex-wrap: wrap;
 }
 
-/* Favorite button */
 .favorite-btn {
   padding: 0.5rem 1rem;
   border: 2px solid var(--border);
@@ -541,7 +498,6 @@ mark {
   border-color: var(--chili);
 }
 
-/* Added by script.js when a recipe is saved */
 .favorite-btn.is-favorite {
   background-color: #fde3de;
   border-color: #d62828;
@@ -549,17 +505,13 @@ mark {
   animation: pop 0.3s ease;
 }
 
-/* Message shown when a filter has no results */
 .empty-message {
   text-align: center;
   color: var(--muted);
   padding: 2rem;
 }
 
-
-/* =====================================================
-   8. SINGLE RECIPE PAGES
-   ===================================================== */
+/* Recipe pages */
 .recipe-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -576,7 +528,6 @@ mark {
   box-shadow: var(--shadow);
 }
 
-/* Quick facts under the description (time, servings, origin) */
 .recipe-meta {
   display: flex;
   flex-wrap: wrap;
@@ -588,7 +539,6 @@ mark {
   font-weight: 600;
 }
 
-/* Ingredients + instructions side by side */
 .recipe-body {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
@@ -616,7 +566,6 @@ mark {
   position: relative;
 }
 
-/* Small turmeric dot instead of a plain bullet */
 .ingredients li::before {
   content: "";
   position: absolute;
@@ -632,7 +581,6 @@ mark {
   border-bottom: none;
 }
 
-/* Ingredient scaler (servings input) */
 .scaler {
   display: flex;
   align-items: center;
@@ -669,7 +617,6 @@ mark {
   color: var(--chili);
 }
 
-/* Expandable instructions: <details><summary> */
 details {
   border: 2px solid var(--border);
   border-radius: 0.5rem;
@@ -693,12 +640,10 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-/* Custom + / − indicator */
 summary::after {
   content: "+";
   font-size: 1.4rem;
   color: var(--chili);
-  transition: transform 0.3s;
 }
 
 details[open] summary::after {
@@ -723,9 +668,8 @@ details li {
   margin-bottom: 0.5rem;
 }
 
-/* Nutrition facts table */
 .table-wrapper {
-  overflow-x: auto;         /* table scrolls sideways on tiny screens */
+  overflow-x: auto;
   margin: 1.5rem 0;
 }
 
@@ -760,10 +704,7 @@ details li {
   background-color: var(--millet);
 }
 
-
-/* =====================================================
-   9. CULINARY REGIONS PAGES
-   ===================================================== */
+/* Regions */
 .region-overview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -782,7 +723,6 @@ details li {
   font-size: 1.05rem;
 }
 
-/* Staples / techniques lists */
 .staples-list {
   display: flex;
   flex-wrap: wrap;
@@ -799,7 +739,6 @@ details li {
   font-weight: 600;
 }
 
-/* Highlighted spices on region pages get a bolder look */
 .region-section mark,
 .region-text mark {
   background-color: transparent;
@@ -814,10 +753,7 @@ details li {
   line-height: 1.8;
 }
 
-
-/* =====================================================
-   10. ABOUT PAGE
-   ===================================================== */
+/* About */
 .mission {
   background-color: var(--red-earth);
   color: var(--on-dark);
@@ -844,10 +780,14 @@ details li {
   margin-top: 1.5rem;
 }
 
+/* Contact */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
 
-/* =====================================================
-   11. CONTACT PAGE & FORM
-   ===================================================== */
 .contact-form {
   max-width: 600px;
   background-color: var(--surface);
@@ -884,7 +824,6 @@ details li {
   resize: vertical;
 }
 
-/* Focus state: turmeric border + soft glow */
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
@@ -893,7 +832,6 @@ details li {
   box-shadow: 0 0 0 4px rgba(227, 160, 24, 0.3);
 }
 
-/* Error state added by script.js */
 .contact-form .invalid {
   border-color: #c62828;
 }
@@ -916,7 +854,6 @@ details li {
   margin-top: 0.25rem;
 }
 
-/* Confirmation message shown after a valid submit */
 .confirmation {
   max-width: 600px;
   background-color: var(--surface);
@@ -931,14 +868,6 @@ details li {
   color: var(--success);
 }
 
-/* Contact page: form and info side by side */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
 .contact-info {
   background-color: var(--surface);
   padding: 2rem;
@@ -946,10 +875,7 @@ details li {
   box-shadow: var(--shadow);
 }
 
-
-/* =====================================================
-   12. FOOTER & NEWSLETTER
-   ===================================================== */
+/* Footer & newsletter */
 .site-footer {
   background-color: var(--red-earth);
   color: var(--on-dark);
@@ -1003,17 +929,13 @@ details li {
   background-color: #f2b836;
 }
 
-/* "Thanks for subscribing" text added by script.js */
 .newsletter-message {
   margin-top: 0.75rem;
   font-weight: 700;
   color: var(--turmeric);
 }
 
-
-/* =====================================================
-   13. ANIMATIONS
-   ===================================================== */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1025,7 +947,6 @@ details li {
   100% { transform: scale(1); }
 }
 
-/* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1036,25 +957,19 @@ details li {
   }
 }
 
-
-/* =====================================================
-   14. RESPONSIVE ADJUSTMENTS
-   ===================================================== */
-
-/* Tablets */
+/* Responsive */
 @media (max-width: 900px) {
   .recipe-header,
   .recipe-body,
   .contact-layout {
-    grid-template-columns: 1fr;   /* stack columns */
+    grid-template-columns: 1fr;
   }
 }
 
-/* Phones */
 @media (max-width: 700px) {
   .site-header {
     flex-direction: column;
-    position: static;             /* header is taller on phones, so stop it sticking */
+    position: static;
   }
 
   .nav-links {
@@ -1063,7 +978,7 @@ details li {
   }
 
   .hero {
-    min-height: 55vh;
+    min-height: 45vh;
     padding: 3rem 5%;
   }
 

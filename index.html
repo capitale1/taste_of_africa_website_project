@@ -29,14 +29,23 @@
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </header>
 
-  <!-- ========== HERO SECTION ========== -->
-  <!-- Background image is set in styles.css (images/hero.jpg) -->
+    <!-- ========== HERO SECTION ========== -->
   <section class="hero" aria-labelledby="hero-title">
+
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide slide-1 active"></div>
+      <div class="hero-slide slide-2"></div>
+      <div class="hero-slide slide-3"></div>
+      <div class="hero-slide slide-4"></div>
+      <div class="hero-slide slide-5"></div>
+    </div>
+
     <div class="hero-content">
       <h1 id="hero-title">Taste of Africa</h1>
       <p>From the smoky jollof of Lagos to the slow-cooked tagines of Marrakech, discover the dishes, spices and stories behind Africa's kitchens.</p>
       <a href="recipes.html" class="btn">Explore recipes</a>
     </div>
+
   </section>
 
   <main>
@@ -45,7 +54,6 @@
       <h2 id="video-title">A continent of flavor</h2>
       <p>Africa is home to 54 countries and thousands of food traditions. Watch this short introduction to the continent's food culture.</p>
       <div class="video-wrapper">
-        <!-- Replace VIDEO_ID with a real YouTube video ID (see instructions) -->
         <iframe
           src="https://www.youtube.com/embed/0OWEqSbX1Us"
           title="Introduction to African food culture"
