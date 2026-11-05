@@ -4,7 +4,7 @@ A multi-page website celebrating Africa's rich and diverse culinary traditions: 
 
 **Live site:** https://capitale1.github.io/taste_of_africa_website_project/
 
-Built by **Armstrong Ngororano** for the *Advanced Front-end Web Development* course at the African Leadership University (September 2026 term).
+Built by **Armstrong Ngororano** 
 
 ---
 
