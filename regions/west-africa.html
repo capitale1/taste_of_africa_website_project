@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover West African food culture: staples, spices, cooking techniques and classic dishes.">
   <title>West Africa | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
@@ -10,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- This page is inside /regions, so paths start with ../ -->
   <link rel="stylesheet" href="../styles.css">
   <script src="../script.js" defer></script>
 </head>
@@ -20,7 +22,7 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../recipes.html">Recipes</a></li>
-        <li><a href="../regions.html">Regions</a></li>
+        <li><a href="../regions.html" class="active">Regions</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
@@ -29,8 +31,92 @@
   </header>
 
   <main>
-    <h1>West Africa</h1>
-    <!-- Page content goes here -->
+    <a href="../regions.html" class="back-link">← Back to all regions</a>
+
+    <section class="recipe-header">
+      <img src="../images/jollof.jpg" alt="Jollof rice, one of West Africa's best-known dishes">
+      <div>
+        <h1>West Africa</h1>
+        <p class="page-intro">Bold, spicy and generous: West African cooking is built for sharing.</p>
+      </div>
+    </section>
+
+    <!-- ========== FOOD CULTURE ========== -->
+    <section class="region-section">
+      <h2>Food culture</h2>
+      <div class="region-text">
+          <p>West Africa stretches from Senegal to Nigeria and includes countries like Ghana, Mali, Côte d'Ivoire and Sierra Leone. Meals are social events, often eaten from a shared bowl, and food plays a central role in weddings, naming ceremonies and religious holidays.</p>
+          <p>Most dishes pair a starchy staple with a rich soup or stew. Flavor comes from <mark>scotch bonnet</mark> peppers, tomatoes, onions and red <mark>palm oil</mark>, deepened with fermented ingredients like <mark>dawadawa</mark> (locust beans) and dried or smoked fish.</p>
+      </div>
+
+      <h3>Staple foods</h3>
+      <ul class="staples-list">
+            <li>Rice</li>
+            <li>Yams</li>
+            <li>Cassava</li>
+            <li>Plantain</li>
+            <li>Millet</li>
+            <li>Maize</li>
+            <li>Black-eyed peas</li>
+            <li>Groundnuts</li>
+      </ul>
+
+      <h3>Cooking techniques</h3>
+      <ul class="region-text">
+            <li>Many soups are thickened with ground <mark>egusi</mark> (melon seeds), okra or groundnut paste.</li>
+            <li>Starchy foods such as yam and cassava are boiled and <mark>pounded</mark> into smooth, stretchy fufu, eaten by hand with soup.</li>
+            <li>Street food favorite suya is thinly sliced meat coated in a peanut and chili spice mix, then <mark>grilled</mark> over open flame.</li>
+      </ul>
+    </section>
+
+    <!-- ========== EXAMPLE DISHES ========== -->
+    <section>
+      <h2>Dishes to try</h2>
+      <div class="card-grid">
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Jollof Rice</h3>
+            <p>Tomato and pepper rice, the party favorite.</p>
+            <a href="../recipes/jollof.html" class="btn">View recipe</a>
+          </div>
+        </article>
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Egusi Soup</h3>
+            <p>A thick soup of ground melon seeds and leafy greens.</p>
+            <p><em>Recipe coming soon</em></p>
+          </div>
+        </article>
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Fufu with Light Soup</h3>
+            <p>Pounded cassava and plantain with a peppery broth.</p>
+            <p><em>Recipe coming soon</em></p>
+          </div>
+        </article>
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Suya</h3>
+            <p>Spicy grilled meat skewers from northern Nigeria.</p>
+            <p><em>Recipe coming soon</em></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== VIDEO ========== -->
+    <section>
+      <h2>Taste the region</h2>
+      <div class="video-wrapper">
+        <!-- Replace VIDEO_ID with a video about West African food culture -->
+        <iframe
+          src="https://www.youtube.com/embed/yjtCDgjxRAw"
+          title="Pierre Thiam: Fonio, the ancient grain of West Africa"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"></iframe>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

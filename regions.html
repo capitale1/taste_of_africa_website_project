@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the food cultures of West, North and East Africa.">
   <title>Culinary Regions | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
@@ -20,7 +21,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="regions.html">Regions</a></li>
+        <li><a href="regions.html" class="active" aria-current="page">Regions</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -30,7 +31,48 @@
 
   <main>
     <h1>Culinary Regions</h1>
-    <!-- Page content goes here -->
+    <p class="page-intro">Africa is not one cuisine but hundreds. Climate, crops, trade routes and history have shaped very different ways of cooking across the continent. Choose a region to explore its <mark>staples</mark>, <mark>spices</mark> and cooking techniques.</p>
+
+    <div class="region-overview">
+      <section class="region-section" aria-labelledby="west-africa-title">
+        <h2 id="west-africa-title">West Africa</h2>
+        <p>Bold, spicy and generous: West African cooking is built for sharing.</p>
+        <ul class="staples-list">
+            <li>Rice</li>
+            <li>Yams</li>
+            <li>Cassava</li>
+            <li>Plantain</li>
+            <li>Millet</li>
+        </ul>
+        <a href="regions/west-africa.html" class="btn">Explore West Africa</a>
+      </section>
+
+      <section class="region-section" aria-labelledby="north-africa-title">
+        <h2 id="north-africa-title">North Africa</h2>
+        <p>Warm spices, slow cooking and centuries of trade along the Mediterranean and the Sahara.</p>
+        <ul class="staples-list">
+            <li>Couscous</li>
+            <li>Wheat bread</li>
+            <li>Chickpeas</li>
+            <li>Lentils</li>
+            <li>Olives</li>
+        </ul>
+        <a href="regions/north-africa.html" class="btn">Explore North Africa</a>
+      </section>
+
+      <section class="region-section" aria-labelledby="east-africa-title">
+        <h2 id="east-africa-title">East Africa</h2>
+        <p>From the Ethiopian highlands to the Swahili coast and the hills of Rwanda.</p>
+        <ul class="staples-list">
+            <li>Teff</li>
+            <li>Maize (ugali)</li>
+            <li>Plantain (matoke)</li>
+            <li>Beans</li>
+            <li>Sweet potatoes</li>
+        </ul>
+        <a href="regions/east-africa.html" class="btn">Explore East Africa</a>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">

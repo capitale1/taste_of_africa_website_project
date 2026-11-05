@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover North African food culture: staples, spices, cooking techniques and classic dishes.">
   <title>North Africa | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
@@ -10,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- This page is inside /regions, so paths start with ../ -->
   <link rel="stylesheet" href="../styles.css">
   <script src="../script.js" defer></script>
 </head>
@@ -20,7 +22,7 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../recipes.html">Recipes</a></li>
-        <li><a href="../regions.html">Regions</a></li>
+        <li><a href="../regions.html" class="active">Regions</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
@@ -29,8 +31,92 @@
   </header>
 
   <main>
-    <h1>North Africa</h1>
-    <!-- Page content goes here -->
+    <a href="../regions.html" class="back-link">← Back to all regions</a>
+
+    <section class="recipe-header">
+      <img src="../images/tagine.jpg" alt="A Moroccan tagine, a classic North African dish">
+      <div>
+        <h1>North Africa</h1>
+        <p class="page-intro">Warm spices, slow cooking and centuries of trade along the Mediterranean and the Sahara.</p>
+      </div>
+    </section>
+
+    <!-- ========== FOOD CULTURE ========== -->
+    <section class="region-section">
+      <h2>Food culture</h2>
+      <div class="region-text">
+          <p>North Africa includes Morocco, Algeria, Tunisia, Libya and Egypt. Its cuisine mixes the traditions of the <mark>Amazigh (Berber)</mark> people with Arab, Ottoman, Andalusian and French influences brought by trade and history.</p>
+          <p>Hospitality is central: guests are welcomed with sweet <mark>mint tea</mark>, and Friday couscous is a family tradition in many homes. Dishes are fragrant rather than fiery, seasoned with <mark>cumin</mark>, <mark>saffron</mark>, cinnamon, ginger and spice blends such as ras el hanout, with spicy <mark>harissa</mark> paste on the side.</p>
+      </div>
+
+      <h3>Staple foods</h3>
+      <ul class="staples-list">
+            <li>Couscous</li>
+            <li>Wheat bread</li>
+            <li>Chickpeas</li>
+            <li>Lentils</li>
+            <li>Olives</li>
+            <li>Dates</li>
+            <li>Preserved lemons</li>
+            <li>Lamb</li>
+      </ul>
+
+      <h3>Cooking techniques</h3>
+      <ul class="region-text">
+            <li>Meat and vegetables are <mark>slow-cooked</mark> in a cone-lidded clay tagine, which recycles steam to keep food tender.</li>
+            <li>Couscous is <mark>steamed</mark> two or three times over a simmering stew in a pot called a couscoussier.</li>
+            <li>Lemons are <mark>preserved</mark> in salt for weeks, giving a soft, salty-sour flavor to many dishes.</li>
+      </ul>
+    </section>
+
+    <!-- ========== EXAMPLE DISHES ========== -->
+    <section>
+      <h2>Dishes to try</h2>
+      <div class="card-grid">
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Chicken Tagine</h3>
+            <p>Chicken with preserved lemon and olives.</p>
+            <a href="../recipes/tagine.html" class="btn">View recipe</a>
+          </div>
+        </article>
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Couscous with Seven Vegetables</h3>
+            <p>Morocco's Friday family meal.</p>
+            <p><em>Recipe coming soon</em></p>
+          </div>
+        </article>
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Harira</h3>
+            <p>A tomato, lentil and chickpea soup.</p>
+            <p><em>Recipe coming soon</em></p>
+          </div>
+        </article>
+        <article class="dish-card">
+          <div class="recipe-card-body">
+            <h3>Shakshuka</h3>
+            <p>Eggs poached in a spiced tomato and pepper sauce.</p>
+            <p><em>Recipe coming soon</em></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== VIDEO ========== -->
+    <section>
+      <h2>Taste the region</h2>
+      <div class="video-wrapper">
+        <!-- Replace VIDEO_ID with a video about North African and Moroccan food culture -->
+        <iframe
+          src="https://www.youtube.com/embed/ToZi1CLCsVU"
+          title="North African and Moroccan food culture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"></iframe>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
