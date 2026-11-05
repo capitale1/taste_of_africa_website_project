@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Taste of Africa: share a recipe, ask a question or send feedback.">
   <title>Contact Us | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
@@ -22,7 +23,7 @@
         <li><a href="recipes.html">Recipes</a></li>
         <li><a href="regions.html">Regions</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
@@ -30,7 +31,80 @@
 
   <main>
     <h1>Contact Us</h1>
-    <!-- Page content goes here -->
+    <p class="page-intro">Have a family recipe to share, a question about a dish, or feedback on the site? We would love to hear from you.</p>
+
+    <div class="contact-layout">
+
+      <!-- ========== CONTACT FORM ==========
+           script.js intercepts the submit, checks the message length,
+           then hides the form and shows the confirmation message. -->
+      <form class="contact-form" id="contact-form">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+
+        <!-- Country: <datalist> gives suggestions while still allowing any country.
+             Note: a <datalist> only works with an <input list="...">, not with a <select>. -->
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" list="country-list" placeholder="Start typing your country" autocomplete="country-name" required>
+          <datalist id="country-list">
+            <option value="Rwanda">
+            <option value="Kenya">
+            <option value="Uganda">
+            <option value="Tanzania">
+            <option value="Ethiopia">
+            <option value="Nigeria">
+            <option value="Ghana">
+            <option value="Senegal">
+            <option value="Morocco">
+            <option value="Egypt">
+            <option value="South Africa">
+            <option value="Other">
+          </datalist>
+        </div>
+
+        <!-- Topic: a <select> dropdown -->
+        <div class="form-group">
+          <label for="topic">What is your message about?</label>
+          <select id="topic" name="topic" required>
+            <option value="" disabled selected>Choose a topic</option>
+            <option value="recipe">Sharing a recipe</option>
+            <option value="question">A question about a dish</option>
+            <option value="feedback">Feedback on the website</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here (at least 21 characters)" aria-describedby="message-error message-count" required></textarea>
+          <!-- Filled in by script.js -->
+          <p class="char-count" id="message-count">0 characters</p>
+          <p class="error-message hidden" id="message-error" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn">Send message</button>
+      </form>
+
+      <!-- Shown by script.js after a valid submit -->
+      <div class="confirmation hidden" id="confirmation" role="status" aria-live="polite"></div>
+
+      <!-- ========== CONTACT INFO ========== -->
+      <aside class="contact-info" aria-labelledby="info-title">
+        <h2 id="info-title">Other ways to reach us</h2>
+        <p><strong>Email:</strong> hello@tasteofafrica.example</p>
+        <p><strong>Based in:</strong> Kigali, Rwanda</p>
+        <p>We usually reply within two working days. If you are sending a family recipe, tell us where it comes from and who taught it to you. The stories are our favorite part.</p>
+      </aside>
+    </div>
   </main>
 
   <footer class="site-footer">
