@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to cook Moroccan chicken tagine with preserved lemon and olives.">
+  <title>Chicken Tagine | Taste of Africa</title>
+
+  <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- This page is inside /recipes, so paths start with ../ -->
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="logo">Taste of Africa</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../recipes.html" class="active">Recipes</a></li>
+        <li><a href="../regions.html">Regions</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main>
+    <a href="../recipes.html" class="back-link">← Back to all recipes</a>
+
+    <article>
+      <!-- ========== DISH NAME, IMAGE & CULTURAL DESCRIPTION ========== -->
+      <section class="recipe-header">
+        <img src="../images/tagine.jpg" alt="Chicken tagine with olives and preserved lemon in a clay pot">
+        <div>
+          <span class="region-tag">North Africa</span>
+          <h1>Chicken Tagine</h1>
+          <p>A tagine is both a dish and the pot it is cooked in: a shallow clay base with a tall cone-shaped lid. The cone traps steam, which rolls back down into the food, so meat becomes tender with very little water. This clever design suits the dry landscapes of North Africa, where the <mark>Amazigh (Berber)</mark> people have cooked this way for centuries.</p>
+          <p>Moroccan cooking blends Amazigh, Arab, Andalusian and French influences, and you can taste it in the spice mix: <mark>saffron</mark>, ginger, cumin, turmeric and cinnamon. Chicken with preserved lemon and olives is one of the country's most loved tagines, usually shared from one pot and eaten with bread.</p>
+          <ul class="recipe-meta">
+            <li>⏱ 1 hr 30 min</li>
+            <li>🍽 Serves 4</li>
+            <li>📍 Morocco</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== INGREDIENTS & INSTRUCTIONS ========== -->
+      <section class="recipe-body">
+
+        <!-- Ingredients with servings scaler.
+             Each .qty has data-amount = the amount for the base servings.
+             script.js multiplies it when the servings number changes. -->
+        <div class="ingredients">
+          <h2>Ingredients</h2>
+          <div class="scaler">
+            <label for="servings">Servings:</label>
+            <input type="number" id="servings" min="1" max="20" value="4" data-base="4">
+          </div>
+          <ul>
+            <li><span class="qty" data-amount="8">8</span> chicken thighs or drumsticks</li>
+            <li><span class="qty" data-amount="2">2</span> onions, finely sliced</li>
+            <li><span class="qty" data-amount="3">3</span> garlic cloves, crushed</li>
+            <li><span class="qty" data-amount="1">1</span> tbsp grated fresh ginger</li>
+            <li><span class="qty" data-amount="1">1</span> tsp ground cumin</li>
+            <li><span class="qty" data-amount="1">1</span> tsp ground turmeric</li>
+            <li><span class="qty" data-amount="1">1</span> tsp paprika</li>
+            <li><span class="qty" data-amount="1">1</span> cinnamon stick</li>
+            <li><span class="qty" data-amount="1">1</span> pinch of <mark>saffron</mark> threads</li>
+            <li><span class="qty" data-amount="3">3</span> tbsp olive oil</li>
+            <li><span class="qty" data-amount="1">1</span> preserved lemon, cut into strips</li>
+            <li><span class="qty" data-amount="1">1</span> cup green olives</li>
+            <li><span class="qty" data-amount="1">1</span> cup chicken stock</li>
+            <li><span class="qty" data-amount="1">1</span> small bunch fresh coriander, chopped</li>
+            <li><span class="qty" data-amount="1">1</span> tsp salt (or to taste)</li>
+          </ul>
+        </div>
+
+        <!-- Expandable cooking instructions -->
+        <div class="instructions">
+          <h2>Instructions</h2>
+          <details open>
+            <summary>Step 1: Marinate the chicken</summary>
+            <ol>
+              <li>Mix the garlic, ginger, cumin, turmeric, paprika, salt and 2 tbsp of the oil into a paste.</li>
+              <li>Rub it all over the chicken and leave for at least 30 minutes (or overnight in the fridge).</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 2: Brown and build the base</summary>
+            <ol>
+              <li>Heat the rest of the oil in a tagine or heavy pot. Brown the chicken on both sides, then set aside.</li>
+              <li>Add the onions and cook slowly for 10 minutes until soft and golden.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 3: Slow-cook</summary>
+            <ol>
+              <li>Soak the saffron in the warm stock for 5 minutes.</li>
+              <li>Return the chicken to the pot, add the cinnamon stick and pour in the saffron stock.</li>
+              <li>Cover and simmer on low heat for 45 minutes, until the chicken is very tender.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 4: Finish and serve</summary>
+            <ol>
+              <li>Add the preserved lemon and olives and cook uncovered for 10 more minutes so the sauce thickens.</li>
+              <li>Scatter with coriander and serve straight from the pot with bread or couscous.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========== VIDEO TUTORIAL ========== -->
+      <section>
+        <h2>Watch how it's made</h2>
+        <div class="video-wrapper">
+          <!-- Replace VIDEO_ID with a chicken tagine tutorial video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/R8fyTivC6lM"
+            title="How to make chicken tagine"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <!-- ========== NUTRITION TABLE ========== -->
+      <section>
+        <h2>Nutrition facts</h2>
+        <div class="table-wrapper">
+          <table class="nutrition-table">
+            <caption>Approximate values per serving</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nutrient</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Calories</td><td>about 420 kcal</td></tr>
+              <tr><td>Carbohydrates</td><td>about 12 g</td></tr>
+              <tr><td>Protein</td><td>about 32 g</td></tr>
+              <tr><td>Fat</td><td>about 26 g</td></tr>
+              <tr><td>Fiber</td><td>about 3 g</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== MAP OF COUNTRY OF ORIGIN ========== -->
+      <section>
+        <h2>Where it comes from</h2>
+        <p>Tagines are cooked across North Africa, but this lemon-and-olive version is a classic of <mark>Morocco</mark>.</p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Morocco&output=embed"
+            title="Map of Morocco, the origin of chicken tagine"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <!-- Newsletter signup (optional enhancement) -->
+    <form class="newsletter" id="newsletter-form">
+      <label for="newsletter-email">Get new recipes in your inbox</label>
+      <div class="newsletter-row">
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+    <p>&copy; 2026 Taste of Africa. Celebrating the continent's food heritage.</p>
+  </footer>
+</body>
+</html>

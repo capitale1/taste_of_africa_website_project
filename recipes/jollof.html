@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to cook West African jollof rice, with its history, ingredients and step-by-step instructions.">
+  <title>Jollof Rice | Taste of Africa</title>
+
+  <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- This page is inside /recipes, so paths start with ../ -->
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="logo">Taste of Africa</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../recipes.html" class="active">Recipes</a></li>
+        <li><a href="../regions.html">Regions</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main>
+    <a href="../recipes.html" class="back-link">← Back to all recipes</a>
+
+    <article>
+      <!-- ========== DISH NAME, IMAGE & CULTURAL DESCRIPTION ========== -->
+      <section class="recipe-header">
+        <img src="../images/jollof.jpg" alt="A plate of bright orange jollof rice served with fried plantain">
+        <div>
+          <span class="region-tag">West Africa</span>
+          <h1>Jollof Rice</h1>
+          <p>Jollof rice is the dish West Africa argues about most lovingly. Its roots are usually traced to the <mark>Wolof people</mark> of Senegal and the Gambia, whose rice and fish dish <em>thieboudienne</em> is often called jollof's ancestor. The name itself comes from the old Wolof (Jolof) Empire.</p>
+          <p>Today Nigerians, Ghanaians, Senegalese and Sierra Leoneans each cook it their own way, and the friendly "jollof wars" over whose version is best are part of the fun. No wedding, birthday or Christmas table is complete without it, and the slightly smoky, crispy layer at the bottom of the pot, known as <mark>party jollof</mark> flavor, is the most prized part.</p>
+          <ul class="recipe-meta">
+            <li>⏱ 1 hr 15 min</li>
+            <li>🍽 Serves 4</li>
+            <li>📍 Senegal, Nigeria, Ghana</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== INGREDIENTS & INSTRUCTIONS ========== -->
+      <section class="recipe-body">
+
+        <!-- Ingredients with servings scaler.
+             Each .qty has data-amount = the amount for the base servings.
+             script.js multiplies it when the servings number changes. -->
+        <div class="ingredients">
+          <h2>Ingredients</h2>
+          <div class="scaler">
+            <label for="servings">Servings:</label>
+            <input type="number" id="servings" min="1" max="20" value="4" data-base="4">
+          </div>
+          <ul>
+            <li><span class="qty" data-amount="2">2</span> cups long-grain parboiled rice</li>
+            <li><span class="qty" data-amount="4">4</span> medium tomatoes</li>
+            <li><span class="qty" data-amount="2">2</span> red bell peppers</li>
+            <li><span class="qty" data-amount="1">1</span> <mark>scotch bonnet</mark> pepper</li>
+            <li><span class="qty" data-amount="2">2</span> onions</li>
+            <li><span class="qty" data-amount="3">3</span> tbsp tomato paste</li>
+            <li><span class="qty" data-amount="5">5</span> tbsp vegetable oil</li>
+            <li><span class="qty" data-amount="2">2</span> cups chicken or vegetable stock</li>
+            <li><span class="qty" data-amount="2">2</span> garlic cloves</li>
+            <li><span class="qty" data-amount="1">1</span> tsp grated ginger</li>
+            <li><span class="qty" data-amount="1">1</span> tsp dried <mark>thyme</mark></li>
+            <li><span class="qty" data-amount="1">1</span> tsp curry powder</li>
+            <li><span class="qty" data-amount="2">2</span> bay leaves</li>
+            <li><span class="qty" data-amount="1">1</span> tsp salt (or to taste)</li>
+          </ul>
+        </div>
+
+        <!-- Expandable cooking instructions -->
+        <div class="instructions">
+          <h2>Instructions</h2>
+
+          <details open>
+            <summary>Step 1: Make the pepper base</summary>
+            <ol>
+              <li>Blend the tomatoes, red bell peppers, scotch bonnet and one onion until smooth.</li>
+              <li>Pour into a pot and boil for about 15 minutes until it reduces by about a third.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 2: Fry the base</summary>
+            <ol>
+              <li>Heat the oil in a large, heavy pot. Slice the second onion and fry until soft.</li>
+              <li>Add the garlic, ginger and tomato paste. Fry for 3–4 minutes, stirring, until the paste darkens.</li>
+              <li>Add the reduced pepper base, thyme, curry powder, bay leaves and salt. Cook for 10 minutes until the oil rises to the top.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 3: Cook the rice</summary>
+            <ol>
+              <li>Rinse the rice until the water runs clear, then stir it into the sauce.</li>
+              <li>Add the stock, cover the pot tightly (foil under the lid helps) and cook on low heat for 30 minutes.</li>
+              <li>Stir gently once or twice. If the rice is still hard, add a splash of water and keep cooking.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 4: Get the smoky "party" flavor and serve</summary>
+            <ol>
+              <li>When the rice is cooked, turn the heat up for 2–3 minutes without stirring so the bottom toasts slightly.</li>
+              <li>Remove the bay leaves and serve with fried plantain, coleslaw or grilled chicken.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========== VIDEO TUTORIAL ========== -->
+      <section>
+        <h2>Watch how it's made</h2>
+        <div class="video-wrapper">
+          <!-- Replace VIDEO_ID with a jollof rice tutorial video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/tuC4WWo60qU"
+            title="How to cook jollof rice"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <!-- ========== NUTRITION TABLE ========== -->
+      <section>
+        <h2>Nutrition facts</h2>
+        <div class="table-wrapper">
+          <table class="nutrition-table">
+            <caption>Approximate values per serving (without meat)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nutrient</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Calories</td><td>about 450 kcal</td></tr>
+              <tr><td>Carbohydrates</td><td>about 70 g</td></tr>
+              <tr><td>Protein</td><td>about 9 g</td></tr>
+              <tr><td>Fat</td><td>about 15 g</td></tr>
+              <tr><td>Fiber</td><td>about 4 g</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== MAP OF COUNTRY OF ORIGIN ========== -->
+      <section>
+        <h2>Where it comes from</h2>
+        <p>Jollof's story begins in <mark>Senegal</mark>, home of the Wolof people, before spreading across West Africa.</p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Senegal&output=embed"
+            title="Map of Senegal, the origin of jollof rice"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <!-- Newsletter signup (optional enhancement) -->
+    <form class="newsletter" id="newsletter-form">
+      <label for="newsletter-email">Get new recipes in your inbox</label>
+      <div class="newsletter-row">
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+    <p>&copy; 2026 Taste of Africa. Celebrating the continent's food heritage.</p>
+  </footer>
+</body>
+</html>

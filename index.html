@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taste of Africa celebrates the flavors, ingredients and food heritage of the African continent.">
+  <title>Home | Taste of Africa</title>
+
+  <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">Taste of Africa</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="regions.html">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <!-- Background image is set in styles.css (images/hero.jpg) -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <h1 id="hero-title">Taste of Africa</h1>
+      <p>From the smoky jollof of Lagos to the slow-cooked tagines of Marrakech, discover the dishes, spices and stories behind Africa's kitchens.</p>
+      <a href="recipes.html" class="btn">Explore recipes</a>
+    </div>
+  </section>
+
+  <main>
+    <!-- ========== INTRO VIDEO ========== -->
+    <section class="intro-video" aria-labelledby="video-title">
+      <h2 id="video-title">A continent of flavor</h2>
+      <p>Africa is home to 54 countries and thousands of food traditions. Watch this short introduction to the continent's food culture.</p>
+      <div class="video-wrapper">
+        <!-- Replace VIDEO_ID with a real YouTube video ID (see instructions) -->
+        <iframe
+          src="https://www.youtube.com/embed/0OWEqSbX1Us"
+          title="Introduction to African food culture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- ========== FEATURED DISHES ========== -->
+    <section aria-labelledby="featured-title">
+      <h2 id="featured-title">Featured dishes</h2>
+      <p class="page-intro">Four signature dishes, four corners of the continent.</p>
+
+      <div class="card-grid">
+        <figure class="dish-card">
+          <img src="images/jollof.jpg" alt="A plate of bright orange jollof rice served with fried plantain">
+          <figcaption>
+            <h3>Jollof Rice</h3>
+            <p>West Africa's celebration rice, cooked in a rich tomato and pepper base with <mark>scotch bonnet</mark> and thyme.</p>
+            <a href="recipes/jollof.html" class="btn">View recipe</a>
+          </figcaption>
+        </figure>
+
+        <figure class="dish-card">
+          <img src="images/tagine.jpg" alt="Chicken tagine with olives and preserved lemon in a clay pot">
+          <figcaption>
+            <h3>Chicken Tagine</h3>
+            <p>A Moroccan stew slow-cooked in a cone-shaped clay pot, fragrant with <mark>saffron</mark>, ginger and preserved lemon.</p>
+            <a href="recipes/tagine.html" class="btn">View recipe</a>
+          </figcaption>
+        </figure>
+
+        <figure class="dish-card">
+          <img src="images/injera.jpg" alt="Injera flatbread topped with colourful stews">
+          <figcaption>
+            <h3>Injera</h3>
+            <p>A spongy, tangy flatbread from Ethiopia and Eritrea, made from <mark>teff</mark> flour and used as both plate and spoon.</p>
+            <a href="recipes/injera.html" class="btn">View recipe</a>
+          </figcaption>
+        </figure>
+
+        <figure class="dish-card">
+          <img src="images/isombe.png" alt="A bowl of dark green isombe made from cassava leaves">
+          <figcaption>
+            <h3>Isombe</h3>
+            <p>A Rwandan favorite of pounded <mark>cassava leaves</mark> simmered with eggplant, spinach and peanut paste.</p>
+            <a href="recipes/isombe.html" class="btn">View recipe</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== EXPLORE BY REGION ========== -->
+    <section aria-labelledby="regions-title">
+      <h2 id="regions-title">Explore by region</h2>
+      <p class="page-intro">Every region has its own staples, spices and cooking methods.</p>
+
+      <div class="region-links">
+        <a href="regions/west-africa.html" class="region-link">
+          <h3>West Africa</h3>
+          <p>Rice, yams, palm oil and fiery peppers.</p>
+        </a>
+        <a href="regions/north-africa.html" class="region-link">
+          <h3>North Africa</h3>
+          <p>Couscous, tagines and warm spice blends.</p>
+        </a>
+        <a href="regions/east-africa.html" class="region-link">
+          <h3>East Africa</h3>
+          <p>Teff, plantains, beans and berbere.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== LATEST FOOD TRENDS ========== -->
+    <section aria-labelledby="trends-title">
+      <h2 id="trends-title">Latest food trends</h2>
+      <p class="page-intro">What's happening in African food right now.</p>
+
+      <div class="trends-list">
+        <article class="trend-card">
+          <time datetime="2026-11">November 2026</time>
+          <h3>Ancient grains go global</h3>
+          <p>Grains like <mark>fonio</mark> and <mark>teff</mark> are showing up on menus and supermarket shelves around the world, valued for being gluten-free and quick to grow.</p>
+        </article>
+
+        <article class="trend-card">
+          <time datetime="2026-10">October 2026</time>
+          <h3>Plant-based African cooking</h3>
+          <p>Many African dishes have always been built on vegetables, beans and leaves. Home cooks are rediscovering dishes like isombe and <mark>misir wot</mark> as everyday plant-based meals.</p>
+        </article>
+
+        <article class="trend-card">
+          <time datetime="2026-09">September 2026</time>
+          <h3>African chefs on the world stage</h3>
+          <p>A new generation of chefs is opening restaurants abroad that put West, East and Southern African flavors like <mark>suya spice</mark> front and center.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <!-- Newsletter signup (optional enhancement) -->
+    <form class="newsletter" id="newsletter-form">
+      <label for="newsletter-email">Get new recipes in your inbox</label>
+      <div class="newsletter-row">
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+    <p>&copy; 2026 Taste of Africa. Celebrating the continent's food heritage.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1085 @@
+/* =====================================================
+   TASTE OF AFRICA - MAIN STYLESHEET
+   -----------------------------------------------------
+   1.  Color palette & variables
+   2.  Reset & base typography
+   3.  Header & navigation
+   4.  Shared utilities (mark, buttons, focus, hidden)
+   5.  Shared layout (page intro, video, map, grids)
+   6.  Home page (hero, featured dishes, regions, trends)
+   7.  Recipe cards, filter & favorites
+   8.  Single recipe pages
+   9.  Culinary regions pages
+   10. About page
+   11. Contact page & form
+   12. Footer & newsletter
+   13. Animations
+   14. Responsive adjustments
+   ===================================================== */
+
+
+/* =====================================================
+   1. COLOR PALETTE & VARIABLES
+   Inspired by African spices and landscapes:
+   turmeric, chili pepper, red earth, roasted coffee, millet
+   ===================================================== */
+:root {
+  --turmeric: #e3a018;     /* warm yellow - highlights, buttons */
+  --chili: #a8321e;        /* deep red - headings, accents */
+  --red-earth: #8c4a24;    /* earthy brown - header & footer */
+  --coffee: #3a2418;       /* dark brown - main text */
+  --millet: #f7ecd6;       /* light grain - page background */
+  --surface: #fffaf1;      /* cards and forms */
+  --muted: #6e5544;        /* secondary text */
+  --border: #e3d2b5;       /* soft borders */
+  --on-dark: #fff6e6;      /* text on brown header/footer */
+  --success: #3d7a3a;      /* confirmation messages */
+
+  --shadow: 0 4px 14px rgba(58, 36, 24, 0.15);
+  --shadow-hover: 0 10px 24px rgba(58, 36, 24, 0.25);
+  --radius: 0.75rem;
+  --space: 1.5rem;
+}
+
+/* Dark mode: script.js adds data-theme="dark" to <html> */
+[data-theme="dark"] {
+  --millet: #1f1612;
+  --surface: #2c201a;
+  --coffee: #f4e6d2;
+  --muted: #c9b29c;
+  --border: #4a382c;
+  --chili: #e2674c;        /* lighter red so headings stay readable */
+  --red-earth: #4a2a18;
+  --success: #7cc277;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =====================================================
+   2. RESET & BASE TYPOGRAPHY
+   ===================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;        /* body fills at least the whole screen */
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 1rem;          /* base size: 16px */
+  line-height: 1.6;         /* comfortable reading */
+  background-color: var(--millet);
+  color: var(--coffee);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Abril Fatface', Georgia, serif;
+  font-weight: 400;         /* Abril Fatface is already heavy */
+  line-height: 1.2;
+  color: var(--chili);
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); }
+h3 { font-size: 1.35rem; }
+
+p {
+  margin: 0 0 1rem;
+  max-width: 70ch;          /* keeps lines short enough to read easily */
+}
+
+a {
+  color: var(--chili);
+}
+
+img {
+  max-width: 100%;          /* images never overflow their container */
+  height: auto;
+  display: block;
+}
+
+/* Main content area: centered, never wider than 1100px */
+main {
+  flex: 1;                  /* pushes the footer to the bottom */
+  width: min(90%, 1100px);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+
+/* =====================================================
+   3. HEADER & NAVIGATION
+   ===================================================== */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 5%;
+  background-color: var(--red-earth);
+  position: sticky;         /* nav stays visible while scrolling */
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Abril Fatface', Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--turmeric);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--on-dark);
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+/* Hover effect: color change + underline */
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--turmeric);
+  border-bottom-color: var(--turmeric);
+}
+
+/* Current page: add class="active" to the link in each page's nav */
+.nav-links a.active {
+  color: var(--turmeric);
+  border-bottom-color: var(--turmeric);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2px solid var(--turmeric);
+  border-radius: 50%;
+  background: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(227, 160, 24, 0.25);
+  transform: rotate(20deg);
+}
+
+
+/* =====================================================
+   4. SHARED UTILITIES
+   ===================================================== */
+
+/* Custom highlight for spices and key ingredients */
+mark {
+  background-color: var(--turmeric);
+  color: #3a2418;
+  padding: 0 0.3em;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+/* Used by the recipe filter and form in script.js */
+.hidden {
+  display: none !important;
+}
+
+/* Reusable button style */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--chili);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--red-earth);
+  transform: translateY(-2px);
+}
+
+/* Clear outline for keyboard users (accessibility) */
+:focus-visible {
+  outline: 3px solid var(--turmeric);
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   5. SHARED LAYOUT
+   ===================================================== */
+
+/* Short intro under the h1 on each page */
+.page-intro {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Responsive YouTube embeds: <div class="video-wrapper"><iframe>...</iframe></div> */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 1.5rem 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Google Maps embeds: <div class="map-wrapper"><iframe>...</iframe></div> */
+.map-wrapper {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 1.5rem 0;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive card grid used on several pages */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space);
+}
+
+/* "Back to recipes" style links */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   6. HOME PAGE
+   ===================================================== */
+
+/* Hero: full-width background image with dark overlay */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 5%;
+  color: #fff;
+  background-image:
+    linear-gradient(rgba(30, 15, 8, 0.55), rgba(30, 15, 8, 0.7)),
+    url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.hero h1 {
+  color: var(--turmeric);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin: 0 auto 1.5rem;
+}
+
+/* Video section under the hero */
+.intro-video {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Featured dish cards: <figure class="dish-card"> */
+.dish-card {
+  margin: 0;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dish-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.dish-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;        /* crops images so all cards match */
+}
+
+.dish-card figcaption {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dish-card figcaption p {
+  color: var(--muted);
+  flex: 1;
+}
+
+/* Explore by region links */
+.region-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space);
+}
+
+.region-link {
+  display: block;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  background-color: var(--red-earth);
+  color: var(--on-dark);
+  text-decoration: none;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.region-link h3 {
+  color: var(--turmeric);
+  margin-bottom: 0.4rem;
+}
+
+.region-link:hover {
+  background-color: var(--chili);
+  transform: translateY(-4px);
+}
+
+/* Latest food trends: <article class="trend-card"> */
+.trends-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space);
+}
+
+.trend-card {
+  background-color: var(--surface);
+  border-left: 5px solid var(--turmeric);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.trend-card time {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+
+/* =====================================================
+   7. RECIPE CARDS, FILTER & FAVORITES
+   ===================================================== */
+
+/* Filter buttons */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.2rem;
+  border: 2px solid var(--chili);
+  border-radius: 2rem;
+  background-color: transparent;
+  color: var(--chili);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--chili);
+  color: #fff;
+}
+
+/* Recipe cards: <article class="recipe-card" data-region="west-africa" data-id="jollof"> */
+.recipe-card {
+  position: relative;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.4s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.recipe-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.recipe-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recipe-card-body p {
+  color: var(--muted);
+  flex: 1;
+}
+
+.region-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  background-color: var(--turmeric);
+  color: #3a2418;
+  margin-bottom: 0.6rem;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Favorite button */
+.favorite-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 2rem;
+  background-color: var(--surface);
+  color: var(--coffee);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.favorite-btn:hover {
+  border-color: var(--chili);
+}
+
+/* Added by script.js when a recipe is saved */
+.favorite-btn.is-favorite {
+  background-color: #fde3de;
+  border-color: #d62828;
+  color: #a51c1c;
+  animation: pop 0.3s ease;
+}
+
+/* Message shown when a filter has no results */
+.empty-message {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem;
+}
+
+
+/* =====================================================
+   8. SINGLE RECIPE PAGES
+   ===================================================== */
+.recipe-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.recipe-header img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Quick facts under the description (time, servings, origin) */
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Ingredients + instructions side by side */
+.recipe-body {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ingredients,
+.instructions {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.ingredients ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients li {
+  padding: 0.6rem 0 0.6rem 1.75rem;
+  border-bottom: 1px dashed var(--border);
+  position: relative;
+}
+
+/* Small turmeric dot instead of a plain bullet */
+.ingredients li::before {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 1.05rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: var(--turmeric);
+}
+
+.ingredients li:last-child {
+  border-bottom: none;
+}
+
+/* Ingredient scaler (servings input) */
+.scaler {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--millet);
+  border-radius: 0.5rem;
+}
+
+.scaler label {
+  font-weight: 700;
+}
+
+.scaler input {
+  width: 4.5rem;
+  padding: 0.4rem;
+  border: 2px solid var(--border);
+  border-radius: 0.4rem;
+  background-color: var(--surface);
+  color: var(--coffee);
+  font: inherit;
+  text-align: center;
+}
+
+.scaler input:focus {
+  outline: none;
+  border-color: var(--turmeric);
+}
+
+.qty {
+  font-weight: 700;
+  color: var(--chili);
+}
+
+/* Expandable instructions: <details><summary> */
+details {
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--surface);
+  overflow: hidden;
+}
+
+summary {
+  padding: 0.9rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom + / − indicator */
+summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--chili);
+  transition: transform 0.3s;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+summary:hover {
+  background-color: var(--millet);
+}
+
+details[open] summary {
+  border-bottom: 2px solid var(--border);
+}
+
+details ol,
+details p {
+  padding: 1rem 1.2rem 1rem 2.6rem;
+  margin: 0;
+}
+
+details li {
+  margin-bottom: 0.5rem;
+}
+
+/* Nutrition facts table */
+.table-wrapper {
+  overflow-x: auto;         /* table scrolls sideways on tiny screens */
+  margin: 1.5rem 0;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.nutrition-table caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.nutrition-table th {
+  background-color: var(--red-earth);
+  color: var(--on-dark);
+}
+
+.nutrition-table tbody tr:nth-child(even) {
+  background-color: var(--millet);
+}
+
+
+/* =====================================================
+   9. CULINARY REGIONS PAGES
+   ===================================================== */
+.region-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.region-section {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border-top: 6px solid var(--chili);
+}
+
+.region-section p {
+  font-size: 1.05rem;
+}
+
+/* Staples / techniques lists */
+.staples-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+}
+
+.staples-list li {
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--turmeric);
+  font-weight: 600;
+}
+
+/* Highlighted spices on region pages get a bolder look */
+.region-section mark,
+.region-text mark {
+  background-color: transparent;
+  color: var(--chili);
+  border-bottom: 3px solid var(--turmeric);
+  border-radius: 0;
+  padding: 0 0.1em;
+}
+
+.region-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   10. ABOUT PAGE
+   ===================================================== */
+.mission {
+  background-color: var(--red-earth);
+  color: var(--on-dark);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.mission h2 {
+  color: var(--turmeric);
+}
+
+.mission p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 65ch;
+}
+
+.history p {
+  font-size: 1.05rem;
+}
+
+.history h3 {
+  margin-top: 1.5rem;
+}
+
+
+/* =====================================================
+   11. CONTACT PAGE & FORM
+   ===================================================== */
+.contact-form {
+  max-width: 600px;
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  background-color: var(--millet);
+  color: var(--coffee);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Focus state: turmeric border + soft glow */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--turmeric);
+  box-shadow: 0 0 0 4px rgba(227, 160, 24, 0.3);
+}
+
+/* Error state added by script.js */
+.contact-form .invalid {
+  border-color: #c62828;
+}
+
+.error-message {
+  color: #c62828;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+[data-theme="dark"] .error-message {
+  color: #ff8a80;
+}
+
+.char-count {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+/* Confirmation message shown after a valid submit */
+.confirmation {
+  max-width: 600px;
+  background-color: var(--surface);
+  border-left: 6px solid var(--success);
+  padding: 2rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease;
+}
+
+.confirmation h2 {
+  color: var(--success);
+}
+
+/* Contact page: form and info side by side */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.contact-info {
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+/* =====================================================
+   12. FOOTER & NEWSLETTER
+   ===================================================== */
+.site-footer {
+  background-color: var(--red-earth);
+  color: var(--on-dark);
+  text-align: center;
+  padding: 2.5rem 5% 1.5rem;
+}
+
+.site-footer p {
+  margin: 1.5rem auto 0;
+  font-size: 0.9rem;
+}
+
+.newsletter label {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.newsletter-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.newsletter input {
+  width: min(100%, 280px);
+  padding: 0.65rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  font: inherit;
+}
+
+.newsletter input:focus {
+  outline: none;
+  border-color: var(--turmeric);
+}
+
+.newsletter button {
+  padding: 0.65rem 1.4rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--turmeric);
+  color: #3a2418;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #f2b836;
+}
+
+/* "Thanks for subscribing" text added by script.js */
+.newsletter-message {
+  margin-top: 0.75rem;
+  font-weight: 700;
+  color: var(--turmeric);
+}
+
+
+/* =====================================================
+   13. ANIMATIONS
+   ===================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* =====================================================
+   14. RESPONSIVE ADJUSTMENTS
+   ===================================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .recipe-header,
+  .recipe-body,
+  .contact-layout {
+    grid-template-columns: 1fr;   /* stack columns */
+  }
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    position: static;             /* header is taller on phones, so stop it sticking */
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero {
+    min-height: 55vh;
+    padding: 3rem 5%;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .mission,
+  .contact-form,
+  .region-section,
+  .ingredients,
+  .instructions {
+    padding: 1.25rem;
+  }
+
+  .map-wrapper {
+    height: 260px;
+  }
+}

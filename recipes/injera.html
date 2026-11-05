@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to make Ethiopian injera flatbread from teff flour.">
+  <title>Injera | Taste of Africa</title>
+
+  <!-- Google Fonts: Abril Fatface for headings, Nunito for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- This page is inside /recipes, so paths start with ../ -->
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="logo">Taste of Africa</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../recipes.html" class="active">Recipes</a></li>
+        <li><a href="../regions.html">Regions</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main>
+    <a href="../recipes.html" class="back-link">← Back to all recipes</a>
+
+    <article>
+      <!-- ========== DISH NAME, IMAGE & CULTURAL DESCRIPTION ========== -->
+      <section class="recipe-header">
+        <img src="../images/injera.jpg" alt="Injera flatbread topped with colourful stews">
+        <div>
+          <span class="region-tag">East Africa</span>
+          <h1>Injera</h1>
+          <p>Injera is the heart of every Ethiopian and Eritrean meal. This large, spongy flatbread is made from <mark>teff</mark>, a tiny grain native to the Ethiopian highlands, and fermented for several days, which gives it a pleasant sour taste and its famous bubbly surface.</p>
+          <p>Injera is plate, cutlery and food all at once. Stews such as <mark>doro wot</mark> and misir wot are spooned on top, and diners tear off pieces with their right hand to scoop them up. Sharing from one platter, and feeding a loved one a bite by hand (called <em>gursha</em>), is a sign of friendship and respect.</p>
+          <ul class="recipe-meta">
+            <li>⏱ 3 days (fermenting) + 30 min</li>
+            <li>🍽 Makes about 8 injera</li>
+            <li>📍 Ethiopia, Eritrea</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== INGREDIENTS & INSTRUCTIONS ========== -->
+      <section class="recipe-body">
+
+        <!-- Ingredients with servings scaler.
+             Each .qty has data-amount = the amount for the base servings.
+             script.js multiplies it when the servings number changes. -->
+        <div class="ingredients">
+          <h2>Ingredients</h2>
+          <div class="scaler">
+            <label for="servings">Number of injera:</label>
+            <input type="number" id="servings" min="1" max="20" value="8" data-base="8">
+          </div>
+          <ul>
+            <li><span class="qty" data-amount="2">2</span> cups <mark>teff</mark> flour</li>
+            <li><span class="qty" data-amount="3">3</span> cups lukewarm water (plus extra for thinning)</li>
+            <li><span class="qty" data-amount="0.5">0.5</span> tsp salt</li>
+            <li><span class="qty" data-amount="1">1</span> tsp vegetable oil, for the pan</li>
+          </ul>
+        </div>
+
+        <!-- Expandable cooking instructions -->
+        <div class="instructions">
+          <h2>Instructions</h2>
+          <details open>
+            <summary>Step 1: Mix the batter</summary>
+            <ol>
+              <li>In a large glass or ceramic bowl, whisk the teff flour with 3 cups of lukewarm water until smooth and lump-free.</li>
+              <li>Cover loosely with a clean cloth.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 2: Ferment for 2–3 days</summary>
+            <ol>
+              <li>Leave the bowl at room temperature. After a day or two you will see bubbles and smell a sour aroma: that is the fermentation working.</li>
+              <li>A layer of water may form on top. Pour most of it off before cooking.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 3: Prepare to cook</summary>
+            <ol>
+              <li>Stir in the salt and enough water to make a thin batter, like pancake batter.</li>
+              <li>Heat a large non-stick pan over medium heat and wipe it lightly with oil.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>Step 4: Cook the injera</summary>
+            <ol>
+              <li>Pour batter in a spiral from the outside in, then tilt the pan to cover the base.</li>
+              <li>When holes appear across the surface, cover with a lid for 1–2 minutes until the top is set. Do not flip it.</li>
+              <li>Slide onto a cloth to cool, and repeat with the rest of the batter.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========== VIDEO TUTORIAL ========== -->
+      <section>
+        <h2>Watch how it's made</h2>
+        <div class="video-wrapper">
+          <!-- Replace VIDEO_ID with a injera tutorial video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/VLDlO2CIMbQ"
+            title="How to make injera"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <!-- ========== NUTRITION TABLE ========== -->
+      <section>
+        <h2>Nutrition facts</h2>
+        <div class="table-wrapper">
+          <table class="nutrition-table">
+            <caption>Approximate values per injera</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nutrient</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Calories</td><td>about 160 kcal</td></tr>
+              <tr><td>Carbohydrates</td><td>about 32 g</td></tr>
+              <tr><td>Protein</td><td>about 5 g</td></tr>
+              <tr><td>Fat</td><td>about 1 g</td></tr>
+              <tr><td>Fiber</td><td>about 4 g</td></tr>
+              <tr><td>Iron</td><td>a good source</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== MAP OF COUNTRY OF ORIGIN ========== -->
+      <section>
+        <h2>Where it comes from</h2>
+        <p>Teff and injera come from the highlands of <mark>Ethiopia</mark> and Eritrea.</p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Ethiopia&output=embed"
+            title="Map of Ethiopia, the origin of injera"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <!-- Newsletter signup (optional enhancement) -->
+    <form class="newsletter" id="newsletter-form">
+      <label for="newsletter-email">Get new recipes in your inbox</label>
+      <div class="newsletter-row">
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+    <p>&copy; 2026 Taste of Africa. Celebrating the continent's food heritage.</p>
+  </footer>
+</body>
+</html>
