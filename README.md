@@ -30,7 +30,7 @@ A newsletter signup form appears in the footer of every page.
 - **Dark / light mode:** toggle with the 🌙 button. The choice is saved in `localStorage` and applies across all pages.
 - **Contact form validation:** the submit is intercepted with `event.preventDefault()`, the message must be more than 20 characters, and a personalised "Thank you, [Name]!" message replaces the form.
 - **Live character counter** on the contact message.
-- **Hero slideshow:** the home page background rotates between food photos (paused for users who prefer reduced motion).
+- - **Hero slideshow:** the home page background rotates between five food photos every 5 seconds.
 - **Newsletter feedback:** shows a thank-you message on signup.
 
 ## Design
